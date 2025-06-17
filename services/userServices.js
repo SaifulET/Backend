@@ -54,7 +54,7 @@ export const login=async(req,res)=>{
     }
 }
 export const UserInfo=async(req,res)=>{
-    const email= "saiful1234@gmail.com";
+    const email= 
     const user= await UserModel.findOne({email:email});
     if(user){
         res.status(200).json({

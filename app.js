@@ -19,14 +19,15 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use("/api",router);
+
 
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 }).then(() => {
+  app.use("/api",router);
   console.log('Connected to MongoDB');
 }).catch((err) => {
   console.error('MongoDB connection error:', err);
