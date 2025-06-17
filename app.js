@@ -14,7 +14,7 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(express.json());
 app.use(
   cors({
-    // origin: "https://guileless-dodol-f43ebb.netlify.app", 
+    origin: "https://guileless-dodol-f43ebb.netlify.app", 
     credentials: true,             
   })
 );
