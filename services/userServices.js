@@ -101,3 +101,13 @@ export const ProfileUpdate=async(req,res)=>{
             res.status(500).json({ error: error.message });
         }
 }
+export const logout= async(req,res)=>{
+   res.clearCookie("token", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+  path: "/", // Match the path used when setting the cookie
+});
+    res.status(200).json({ message: "Logged out successfully" });
+
+}
