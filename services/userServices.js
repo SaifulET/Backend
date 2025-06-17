@@ -41,7 +41,7 @@ export const login=async(req,res)=>{
         let token=TokenEncode(user.email,user._id.toString())
 
         
-        res.cookie("token", token);
+        
 
         res.status(200).json({
         message: 'Login successful',
@@ -96,8 +96,4 @@ export const ProfileUpdate=async(req,res)=>{
             res.status(500).json({ error: error.message });
         }
 }
-export const logout= async(req,res)=>{
-   res.clearCookie("token");
-    res.status(200).json({ message: "Logged out successfully" });
 
-}
