@@ -12,7 +12,12 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://guileless-dodol-f43ebb.netlify.app",  
+    credentials: true,             
+  })
+);
 app.use(cookieParser());
 app.use("/api",router);
 
