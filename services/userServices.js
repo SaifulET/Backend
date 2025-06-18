@@ -4,6 +4,7 @@ import { TokenEncode } from "../utility/tokenUtility.js";
 
 export const register=async(req,res)=>{
     try{
+        console.log("dddd")
         let {name,email,password}=req.body;
         let isUser= await UserModel.findOne({email:email});
         if(isUser){
