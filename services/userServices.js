@@ -2,7 +2,7 @@ import UserModel from "../model/userModel.js";
 import bcrypt from 'bcrypt';
 import { TokenEncode } from "../utility/tokenUtility.js";
 
-export const register=async(req,res)=>{
+export const Register=async(req,res)=>{
     try{
         console.log("dddd")
         let {name,email,password}=req.body;
@@ -32,7 +32,7 @@ export const register=async(req,res)=>{
         res.status(500).json({ message: 'Server error' });
     }
 }
-export const login=async(req,res)=>{
+export const Login=async(req,res)=>{
     try{
         const {email,password}= req.body;
         const user= await UserModel.findOne({email:email});
